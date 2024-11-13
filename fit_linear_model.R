@@ -8,7 +8,7 @@ growth_data <- read.csv("Experiment.csv")
 
 #Case 1. K >> N0, t is small
 
-threshold_t1 <- 1000
+threshold_t1 <- 1500
 
 data_subset1 <- growth_data %>%
   filter(t < threshold_t1) %>%
