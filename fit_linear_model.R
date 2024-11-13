@@ -1,19 +1,33 @@
 #Script to estimate the model parameters using a linear approximation
 
-#library(dplyr)
+# Load necessary library
+install.packages("dplyr") 
+library(dplyr)
 
-growth_data <- read.csv("???")
+growth_data <- read.csv("Experiment.csv")
 
 #Case 1. K >> N0, t is small
 
-data_subset1 <- growth_data %>% filter(t<???) %>% mutate(N_log = log(N))
+threshold_t1 <- 1000
 
-model1 <- lm(N_log ~ t, data_subset1)
+data_subset1 <- growth_data %>%
+  filter(t < threshold_t1) %>%
+  mutate(N_log = log(N))
+
+# Fit a linear model to log-transformed N to approximate early growth rate
+model1 <- lm(N_log ~ t, data = data_subset1)
 summary(model1)
 
 #Case 2. N(t) = K
 
-data_subset2 <- growth_data %>% filter(t>???)
+threshold_t2 <- 2000
 
-model2 <- lm(N ~ 1, data_subset2)
+data_subset2 <- growth_data %>%
+  filter(t > threshold_t2)
+
+# Fit a linear model to estimate the carrying capacity, assuming N is constant at this phase
+model2 <- lm(N ~ 1, data = data_subset2)
 summary(model2)
+
+
+
