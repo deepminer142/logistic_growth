@@ -14,13 +14,13 @@
 - I have now log-transformed the y-axis to show an increasing linear relationship at the start, which then becomes constant.
 
 ### Observation
-1. When K is much greater than N^0^ and t is small, the population grows exponentially.
+1. When K is much greater than N<sub>0</sub> and t is small, the population grows exponentially.
 2. When t tends towards infinity N(t) → K
 
 ### Estimates 
-- Using my observations I can estimate the values of N0, r and k using a linear approximation.
-- The initial population size **at time t = 0 was N0 = 879** - Value taken from excel data (named Experiment.csv)
-- The intrinsic rate of growth (r) (growth rate in an ideal environment (i.e., no resource limitation) **r = 0.0100086** - Calculated fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N0 and t (1500)
+- Using my observations I can estimate the values of N<sub>0</sub>, r and k using a linear approximation.
+- The initial population size **at time t = 0 was N<sub>0</sub> = 879** - Value taken from excel data (named Experiment.csv)
+- The intrinsic rate of growth (r) (growth rate in an ideal environment (i.e., no resource limitation) **r = 0.0100086** - Calculated fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N<sub>0</sub> and t (1500)
 - The carrying capacity **(K) = 5.979e+10** - Calculated when t is large (2000) and assuming the population size remains constant using a linear model. 
 
 ### Interpretations
@@ -30,8 +30,24 @@
 
 ## Question 2
 ### Set Parameters 
-N0 = 879
-r =  0.0100086
-When t = 4980
+- N<sub>0</sub> = 879
+- r =  0.0100086
+- When t = 4980
+
+### Calculate
+- The exponential growth model formula is: N(t) = N<sub>0</sub>e<sup>rt</sup>
+- Exponential Growth Prediction: N = 3.894521e+24
+
+- The logistic growth model formula is:
+- N(t) = (N<sub>0</sub> * K * e<sup>rt</sup>) / (K + (N<sub>0</sub> * (e<sup>rt</sup> - 1)))
+- Using K = 5.979 x 10<sup>10</sup>
+- Logistic Growth Prediction: N = 5.979e+10
+
+### Comparison
+- The exponential growth model predicts (N = 3.894521e+24) an greater population size, exceeding the carrying capacity (5.979 x 10<sup>10</sup>)
+- However, the logistic growth model accounts for resource limitations.
+- Therefore, the population stabilizes (N = 5.979e+10) which is much more realistic.
+- Comapring the two models it highlights that an exponential model is not realistic to an enviorment with limited resources, therefore logistic growth is more appropriate in this setting.
 
 ## Question 3
+
