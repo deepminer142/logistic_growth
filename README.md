@@ -8,7 +8,7 @@
 - The population size will reach its carrying capacity (the maximum population size an environment can sustain).
 
 ### Graphical representation of the logistic model
-- !(raw_data_plot.png) 
+!![My Image Description](raw_data_plot.png) 
 - Plot 1: At the beginning, the population seems to grows exponentially, but then slows down and reaches a constant size (equilibrium).
 - Plot 2: If we make a semilog-plot (x-axis linear, y-axis log-transformed), we observe an increasing linear relationship at the early time points, while at later time points, the population size remains constant.
 
