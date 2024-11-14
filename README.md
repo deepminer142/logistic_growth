@@ -53,6 +53,14 @@
 [See the code in Question 3.R](https://github.com/deepminer142/logistic_growth/blob/7583c22c8fe7a731a5cd645b3c4f1c479316d49c/Question%203.R#L1-L34)
 ![My Image Description](population_growth_comparison.png)
 
+### Interpretations
+Blue represent exponential growth - As on a log scale it is a straight line
+- This shows continuous and unbounded increase, suggesting no constraints on resources or space.
+Red line represents logistic growth - as levels off at a particular value as population reaches carrying capacity.
+- This suggests a maximum population size due to environmental constraints.
+
+My graph shows unrestricted growth (exponential) and limited growth stabilising at a sustainable level (logistic).
+
 
 
 
