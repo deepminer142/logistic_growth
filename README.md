@@ -50,8 +50,9 @@
 - Comapring the two models it highlights that an exponential model is not realistic to an enviorment with limited resources, therefore logistic growth is more appropriate in this setting.
 
 ## Question 3
-```language
-def Question_3():
+[See the code in Question 3.R](https://github.com/deepminer142/logistic_growth/blob/7583c22c8fe7a731a5cd645b3c4f1c479316d49c/Question%203.R#L1-L34)
+![My Image Description](population_growth_comparison.png)
+
 
 
 
