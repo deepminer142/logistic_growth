@@ -50,4 +50,9 @@
 - Comapring the two models it highlights that an exponential model is not realistic to an enviorment with limited resources, therefore logistic growth is more appropriate in this setting.
 
 ## Question 3
+```language
+def Question_3():
+
+
+
 
