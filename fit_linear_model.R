@@ -21,7 +21,7 @@ summary(model1)
 
 #Case 2. N(t) = K
 
-threshold_t2 <- 2000
+threshold_t2 <- 1500
 
 data_subset2 <- growth_data %>%
   filter(t > threshold_t2)
