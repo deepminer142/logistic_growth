@@ -98,8 +98,8 @@ $$
 - Comapring the two models highlights that an exponential model is not realistic to an enviorment with limited resources, therefore logistic growth is more appropriate in this setting.
 
 ## Question 3
-https://github.com/deepminer142/logistic_growth/blob/3912ce3b9c63229fac5b3f4748c96a0a38741bc6/Question%203.R#L1-L34
-![My Image Description](population_growth_comparison.png)
+- Code can be found in Question 3.R in repository 
+![My Image Description](population_growth_comparison_with_legend.png)
 
 ### Interpretations
 Blue represent exponential growth - As on a log scale it is a straight line
