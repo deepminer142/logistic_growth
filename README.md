@@ -18,7 +18,7 @@
 - As such the graph now shows an increasing linear relationship at the start, which then becomes constant.
 
 ### Observation
-1. When K is much greater than N<sub>0</sub> and t is small, the population grows exponentially.
+**1. When K is much greater than N<sub>0</sub> and t is small, the population grows exponentially.**
 
 Therefore, 
 
@@ -26,26 +26,35 @@ $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} \quad\to\quad \ln(N) = \ln(N_0) + rt
 $$
 
-As r = 0.0100086** - Calculated fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N<sub>0</sub> and t (1500)
+Therefore, 
+As r = 0.0100086 - Calculated by fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N<sub>0</sub> and t (1500)
+
+ln(N<sub>0</sub>) = 6.8941709, so N<sub>0</sub> = 986.51
+
+
+
+**2. When t tends towards infinity N(t) → K**
 
 Therefore, 
+When t is large (2000) and assuming the population size remains constant using a linear model. 
 
 $$
-\ln(N) = \ln(N_0) + rt
+N(t) = K + 0*t
 $$
 
-2. When t tends towards infinity N(t) → K
+$$
+(K) = 5.979e+10
+$$
 
-Therefore, 
+### Assessing model fit
 
-### Estimates 
+
+### Results 
 - Using my observations I can estimate the values of N<sub>0</sub>, r and k using a linear approximation.
 - The initial population size **at time t = 0 was N<sub>0</sub> = 879** - Value taken from excel data (named Experiment.csv)
 - The intrinsic rate of growth (r) (growth rate in an ideal environment (i.e., no resource limitation) **r = 0.0100086** - Calculated fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N<sub>0</sub> and t (1500)
 - The carrying capacity **(K) = 5.979e+10** - Calculated when t is large (2000) and assuming the population size remains constant using a linear model. 
-
-### Interpretations
-- The population reaches a point near the carrying capacity, and growth nearly stops as the population stabilizes.
+-  The population reaches a point near the carrying capacity, and growth nearly stops as the population stabilizes.
 - In the provided data, this is evident around t =2000 when N(t) approaches K closely.
 - This is a model of density-dependent regulation, where growth rate decreases as population size increases, reflecting real-world limits on resources.
 
