@@ -60,7 +60,7 @@ $$
 ![Assessing model fit to actual growth data](log_scaled_population_growth.png)
 
 ### Results
-### Parameters 
+**Parameters** 
 - N<sub>0</sub> = 986.51
 - r =  0.0100086
 - K = 5.979 x 10<sup>10</sup>
