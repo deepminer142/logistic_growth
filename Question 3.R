@@ -32,3 +32,4 @@ population_growth_plot <- ggplot() +
 
 # Step 7: Save the specific plot as PNG
 ggsave("population_growth_comparison.png", plot = population_growth_plot, width = 8, height = 6, dpi = 300)
+

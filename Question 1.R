@@ -27,9 +27,8 @@ ggplot(data = growth_data, aes(x = t, y = N)) +
   ggtitle("Observed Data and Logistic Growth Model") +
   theme_bw()
 
-# Step 6: Use a logarithmic y-axis scale to better observe the growth trend, especially at lower population sizes
-ggplot(data = growth_data, aes(x = t, y = N)) +
-  geom_point(color = "blue") +             
+population_growth_plot <- ggplot(data = growth_data, aes(x = t, y = N)) +
+geom_point(color = "blue") +             
   geom_function(fun = logistic_fun, colour = "red") +
   scale_y_log10() +                           
   xlab("Time (t)") +
@@ -37,3 +36,5 @@ ggplot(data = growth_data, aes(x = t, y = N)) +
   ggtitle("Log-Scaled Population Growth with Logistic Model") +
   theme_bw()
 
+# Save the plot as PNG
+ggsave(filename = "log_scaled_population_growth.png", plot = population_growth_plot, width = 8, height = 6, dpi = 300)
