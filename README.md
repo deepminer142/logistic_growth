@@ -8,11 +8,11 @@
 - The population size will reach its carrying capacity (K) (the maximum population size an environment can sustain).
 
 ### Graphical representation of Data
-![My Image Description](raw_data_plot.png) 
+![](raw_data_plot.png)
 - Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
 - This graph has the charectrisitc sigmodial curve, showing exponetial population growth at the start, which slows and then reaches the carrying capacity.
   
-![My Image Description](raw_data_on_log_plot.png)
+![](raw_data_on_log_plot.png)
 - Plot of a semi-log plot with time (mins) on the x axis and population size (N) on the y axis as a logarithmic scale.
 - By transforming population size, there is now a linear relationship between population and time.
 - As such the graph now shows an increasing linear relationship at the start, which then becomes constant.
@@ -102,9 +102,10 @@ $$
 ![My Image Description](population_growth_comparison_with_legend.png)
 
 ### Interpretations
-Blue represent exponential growth - As on a log scale it is a straight line
+Orange represent exponential growth - As on a log scale it is a straight line
 - This shows continuous and unbounded increase, suggesting no constraints on resources or space.
-Red line represents logistic growth - as levels off at a particular value as population reaches carrying capacity.
+
+Blue line represents logistic growth - as levels off at a particular value as population reaches carrying capacity.
 - This suggests a maximum population size due to environmental constraints.
 
 My graph shows unrestricted growth (exponential) and limited growth stabilising at a sustainable level (logistic).
