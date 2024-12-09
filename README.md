@@ -9,13 +9,33 @@
 
 ### Graphical representation of Data
 ![My Image Description](raw_data_plot.png) 
-- This plot of my raw dat shows exponetial population growth at the start, which slows and then reaches the carrying capacity. 
+- Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
+- This graph has the charectrisitc sigmodial curve, showing exponetial population growth at the start, which slows and then reaches the carrying capacity.
+  
 ![My Image Description](raw_data_on_log_plot.png)
-- I have now log-transformed the y-axis to show an increasing linear relationship at the start, which then becomes constant.
+- Plot of a semi-log plot with time (mins) on the x axis and population size (N) on the y axis as a logarithmic scale.
+- By transforming population size, there is now a linear relationship between population and time.
+- As such the graph now shows an increasing linear relationship at the start, which then becomes constant.
 
 ### Observation
 1. When K is much greater than N<sub>0</sub> and t is small, the population grows exponentially.
+
+Therefore, 
+
+$$
+N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} \quad\to\quad \ln(N) = \ln(N_0) + rt
+$$
+
+As r = 0.0100086** - Calculated fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N<sub>0</sub> and t (1500)
+
+Therefore, 
+
+$$
+\ln(N) = \ln(N_0) + rt
+
 2. When t tends towards infinity N(t) → K
+
+Therefore, 
 
 ### Estimates 
 - Using my observations I can estimate the values of N<sub>0</sub>, r and k using a linear approximation.
