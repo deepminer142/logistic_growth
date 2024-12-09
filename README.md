@@ -8,11 +8,13 @@
 - The population size will reach its carrying capacity (K) (the maximum population size an environment can sustain).
 
 ### Graphical representation of Data
-![](raw_data_plot.png) 
+![Logistic Growth](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_plot.png)
+
 - Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
 - This graph has the charectrisitc sigmodial curve, showing exponetial population growth at the start, which slows and then reaches the carrying capacity.
   
-![](raw_data_on_log_plot.png)
+![](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_on_log_plot.png)
+
 - Plot of a semi-log plot with time (mins) on the x axis and population size (N) on the y axis as a logarithmic scale.
 - By transforming population size, there is now a linear relationship between population and time.
 - As such the graph now shows an increasing linear relationship at the start, which then becomes constant.
