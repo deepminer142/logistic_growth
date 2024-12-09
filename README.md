@@ -8,7 +8,7 @@
 - The population size will reach its carrying capacity (K) (the maximum population size an environment can sustain).
 
 ### Graphical representation of Data
-![](raw_data_plot.png)
+![](raw_data_plot.png) 
 - Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
 - This graph has the charectrisitc sigmodial curve, showing exponetial population growth at the start, which slows and then reaches the carrying capacity.
   
