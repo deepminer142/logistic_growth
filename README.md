@@ -32,6 +32,7 @@ Therefore,
 
 $$
 \ln(N) = \ln(N_0) + rt
+$$
 
 2. When t tends towards infinity N(t) → K
 
