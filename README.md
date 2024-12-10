@@ -54,20 +54,21 @@ growth_data <- read.csv("Experiment.csv")
 ### Observations
 **1. When K is much greater than N<sub>0</sub> and t is small, the population grows exponentially.**
 
-- Therefore, 
+Therefore, 
 
 $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} \quad\to\quad \ln(N) = \ln(N_0) + rt
 $$
 
-- Therefore,
-- As r = 0.0100086 (Calculated by fitting a linear model to log-transformed N to approximate early growth rate approximation when K > N<sub>0</sub> and t (1500))
+Therefore,
+
+As r = 0.0100086 (Calculated by fitting a linear model to log-transformed N to approximate early growth rate approximation when K > N<sub>0</sub> and t (1500))
 
 $$
 ln(N_0) = 6.8941709 
 $$
 
-- So,
+So,
   
 $$
 N_0 = 986.51
@@ -75,8 +76,9 @@ $$
 
 **2. When t tends towards infinity N(t) → K**
 
-- Therefore, 
-- When t is large (2000) and assuming the population size remains constant using a linear model. 
+Therefore, 
+
+When t is large (2000) and assuming the population size remains constant using a linear model. 
 
 $$
 N(t) = K + 0 \times t
@@ -146,7 +148,7 @@ $$
 N(t) = N_0 e^{rt}
 $$
 
-- Exponential Growth Prediction: **N = 4.37 x 10<sup>24</sup>**
+Exponential Growth Prediction: **N = 4.37 x 10<sup>24</sup>**
 
 2. The logistic growth model formula is:
 
@@ -154,8 +156,9 @@ $$
 N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}}
 $$
 
-- Using K = 5.979 x 10<sup>10</sup>
-- Logistic Growth Prediction: **N = 5.979 x 10<sup>10</sup>**
+Using K = 5.979 x 10<sup>10</sup>
+
+Logistic Growth Prediction: **N = 5.979 x 10<sup>10</sup>**
 
 ### Comparison
 The exponential growth model predicts a population size of N = 4.37 x 10<sup>24</sup>, which greatly exceeds the population sized predicted by the logistic growth model of N = 5.979 x 10<sup>10</sup>). This difference arises because the logistic growth model accounts for resource limitations, causing the population to stabilize at its carrying capacity. In contrast, the exponential growth model assumes populations grow exponentially indefinitely. Comparing the two models highlights that the exponential model is not realistic in an environment with limited resources, making the logistic growth model more appropriate in this context.
