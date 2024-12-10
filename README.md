@@ -4,42 +4,45 @@
 Logistic growth models are used to describe population growth in environments with limited resources. This report examines bacterial growth in an experimetnally controlled enviroment. 900 μl of growth medi and 100 μl of bacterium Escherichia coli were suspended in the same media. It is hypothesized that under the logistic growth model, the bacteria will start multiplying at a fast rate as there is lots of resources available. This will continue until resources start to become limited and growth rate will start to decrease. The population size will reach its carrying capacity (K) which is the maximum population size an environment can sustain. The results were used to estimate three paramters, initial population size, time and carrying capacity.  
 
 ### Graphical representation of data
-*Detailed analysis using a logistic growth model observed in `Experiment.csv`*
+*Script to plot the logistic growth data*
 
 ```{r}
 growth_data <- read.csv("Experiment.csv")
 
-N0 <- 986.51 
-r <- 0.0100086   
-K <- 5.979e+10    
+install.packages("ggplot2")
+library(ggplot2)
 
-logistic_fun <- function(t) {
-  N <- (N0 * K * exp(r * t)) / (K - N0 + N0 * exp(r * t))
-  return(N)
-}
-
-ggplot(data = growth_data, aes(x = t, y = N)) +
-  geom_point(color = "blue") +                 
-  geom_function(fun = logistic_fun, colour = "red") +
+raw_data_plot <- ggplot(data = growth_data, aes(x = t, y = N)) +
+  geom_point(color = "blue") +   
   xlab("Time (t)") +
   ylab("Population Size (N)") +
-  ggtitle("Observed Data and Logistic Growth Model") +
   theme_bw()
 
-population_growth_plot <- ggplot(data = growth_data, aes(x = t, y = N)) +
-geom_point(color = "blue") +             
-  geom_function(fun = logistic_fun, colour = "red") +
-  scale_y_log10() +                           
-  xlab("Time (t)") +
-  ylab("Population Size (N) (log scale)") +
-  ggtitle("Log-Scaled Population Growth with Logistic Model") +
-  theme_bw()
+print(raw_data_plot)
+
+ggsave("raw_data_plot.png", plot = raw_data_plot, width = 8, height = 6, dpi = 300)
 ```
 
 ![Logistic Growth](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_plot.png)
 
 - Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
 - This graph has the charectrisitc sigmodial curve, showing exponetial population growth at the start, which slows and then reaches the carrying capacity.
+
+*Script to plot the semi-log transformed logistic growth data*
+
+```{r}
+raw_data_on_log_plot <- ggplot(data = growth_data, aes(x = t, y = N)) +
+  geom_point(color = "blue") +   
+  xlab("Time (t)") +
+  ylab("Population Size (log scale)") +
+  scale_y_continuous(trans='log10') +
+  theme_bw()
+
+print(raw_data_on_log_plot)
+
+ggsave("raw_data_on_log_plot.png", plot = raw_data_on_log_plot, width = 8, height = 6, dpi = 300)
+growth_data <- read.csv("Experiment.csv")
+```
   
 ![](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_on_log_plot.png)
 
@@ -86,6 +89,12 @@ $$
 - The graph shows the linear model using estimates fitted to the actual growth data.
 - The blue dots show the actual growth data, while the red line represents the model.
 - The graph, shows that the model has a very good fit to the data, therefore, our estimate parameters are appropriate.
+
+*Script to assess the fit of the model to the logistic growth data*
+
+```{r}
+
+```
   
 ![Assessing model fit to actual growth data](log_scaled_population_growth.png)
 
