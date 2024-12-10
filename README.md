@@ -60,7 +60,7 @@ N(t) = \frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} \quad\to\quad \ln(N) = \ln(N_0)
 $$
 
 - Therefore,
-- As r = 0.0100086 - Calculated by fitting a linear model to log-transformed N to approximate early growth rate approximation when K >> N<sub>0</sub> and t (1500)
+- As r = 0.0100086 (Calculated by fitting a linear model to log-transformed N to approximate early growth rate approximation when K > N<sub>0</sub> and t (1500))
 
 $$
 ln(N_0) = 6.8941709 
@@ -78,11 +78,11 @@ $$
 - When t is large (2000) and assuming the population size remains constant using a linear model. 
 
 $$
-N(t) = K + 0*t
+N(t) = K + 0 \times t
 $$
 
 $$
-(K) = 5.979 x 10<sup>10</sup>
+K = 5.979 \times 10^{10}
 $$
 
 ### Assessing model fit
@@ -93,7 +93,33 @@ $$
 *Script to assess the fit of the model to the logistic growth data*
 
 ```{r}
+library(ggplot2)
 
+N0 <- 986.51                
+r <- 0.0100086              
+K <- 5.979e+10              
+
+time_values <- seq(0, 5000, by = 60)
+exp_growth <- N0 * exp(r * time_values)
+logistic_growth <- (N0 * K * exp(r * time_values)) / (K + (N0 * (exp(r * time_values) - 1)))
+
+exp_data <- data.frame(Time = time_values, Population = exp_growth, Model = "Exponential Growth")
+logistic_data <- data.frame(Time = time_values, Population = logistic_growth, Model = "Logistic Growth")
+combined_data <- rbind(exp_data, logistic_data)
+
+population_growth_plot <- ggplot(data = combined_data, aes(x = Time, y = Population, color = Model)) +
+  geom_line() +
+  scale_y_log10() +  
+  labs(
+    title = "Comparison of Exponential and Logistic Growth Models",
+    x = "Time (minutes)",
+    y = "Population Size (log scale)",
+    color = "Model"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+ggsave("population_growth_comparison_with_legend.png", plot = population_growth_plot, width = 8, height = 6, dpi = 300)
 ```
   
 ![Assessing model fit to actual growth data](log_scaled_population_growth.png)
