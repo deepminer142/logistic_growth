@@ -1,7 +1,8 @@
 # Logistic Growth
+
 ## Question 1
 ### Introduction 
-Logistic growth models are used to describe population growth in environments with limited resources. This report examines bacterial growth in an experimetnally controlled enviroment. 900 μl of growth medi and 100 μl of bacterium Escherichia coli were suspended in the same media. It is hypothesized that under the logistic growth model, the bacteria will start multiplying at a fast rate as there is lots of resources available. This will continue until resources start to become limited and growth rate will start to decrease. The population size will reach its carrying capacity (K) which is the maximum population size an environment can sustain. The results were used to estimate three paramters, initial population size, time and carrying capacity.  
+Logistic growth models are used to describe population growth in environments with limited resources. This report examines bacterial growth in an experimentally controlled environment. A total of 900 μl of growth media and 100 μl of the bacterium Escherichia coli were suspended in the same media. It is hypothesized that, under the logistic growth model, the bacteria will initially multiply rapidly due to the abundance of resources. This growth will continue until resources become limited, at which point the growth rate will decrease. The population size will eventually reach its carrying capacity (K), the maximum population size the environment can sustain. The results were used to estimate three parameters: initial population size, time, and carrying capacity. 
 
 ### Graphical representation of data
 *Script to plot the logistic growth data*
@@ -25,8 +26,8 @@ ggsave("raw_data_plot.png", plot = raw_data_plot, width = 8, height = 6, dpi = 3
 
 ![Logistic Growth](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_plot.png)
 
-- Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
-- This graph has the charectrisitc sigmodial curve, showing exponetial population growth at the start, which slows and then reaches the carrying capacity.
+- A plot of the raw data with time (minutes) on the x-axis and population size (N) on the y-axis.
+- This graph exhibits the characteristic sigmoidal curve, showing exponential population growth at the start, which then slows down and eventually reaches the carrying capacity
 
 *Script to plot the semi-log transformed logistic growth data*
 
@@ -46,11 +47,11 @@ growth_data <- read.csv("Experiment.csv")
   
 ![](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_on_log_plot.png)
 
-- Plot of a semi-log plot with time (mins) on the x axis and population size (N) on the y axis as a logarithmic scale.
-- By transforming population size, there is now a linear relationship between population and time.
-- As such the graph now shows an increasing linear relationship at the start, which then becomes constant.
+- A semi-log plot with time (minutes) on the x-axis and population size (N) on the y-axis, displayed on a logarithmic scale.
+- By transforming the population size, a linear relationship between population and time is now observed.
+- Consequently, the graph initially shows an increasing linear relationship, which then levels off and becomes constant.
 
-### Observation
+### Observations
 **1. When K is much greater than N<sub>0</sub> and t is small, the population grows exponentially.**
 
 - Therefore, 
@@ -86,10 +87,6 @@ K = 5.979 \times 10^{10}
 $$
 
 ### Assessing model fit
-- The graph shows the linear model using estimates fitted to the actual growth data.
-- The blue dots show the actual growth data, while the red line represents the model.
-- The graph, shows that the model has a very good fit to the data, therefore, our estimate parameters are appropriate.
-
 *Script to assess the fit of the model to the logistic growth data*
 
 ```{r}
@@ -124,12 +121,16 @@ ggsave("population_growth_comparison_with_legend.png", plot = population_growth_
   
 ![Assessing model fit to actual growth data](log_scaled_population_growth.png)
 
+The graph shows the linear model using estimates fitted to the actual growth data. The blue dots represent the actual growth data, while the red line represents the model. The graph demonstrates that the model has an excellent fit to the data, indicating that our estimated parameters are appropriate.
+
 ### Results
 **Parameters** 
 - N<sub>0</sub> = 986.51
 - r =  0.0100086
 - K = 5.979 x 10<sup>10</sup>
-- This is a model of density-dependent regulation, where growth rate decreases as population size increases, reflecting real-world limits on resources.
+
+Overall, this is a model of density-dependent regulation, where growth rate decreases as population size increases, reflecting real-world limits on resources.
+
 
 ## Question 2
 ### Set Parameters 
@@ -157,10 +158,8 @@ $$
 - Logistic Growth Prediction: **N = 5.979 x 10<sup>10</sup>**
 
 ### Comparison
-- The exponential growth model predicts (N = 4.37 x 10<sup>24</sup>) an greater population size, exceeding the carrying capacity (N = 5.979 x 10<sup>10</sup>)
-- However, the logistic growth model accounts for resource limitations.
-- Therefore, the population stabilizes (N = 5.979 x 10<sup>10</sup>) which is much more realistic.
-- Comapring the two models highlights that an exponential model is not realistic to an enviorment with limited resources, therefore logistic growth is more appropriate in this setting.
+The exponential growth model predicts a population size of N = 4.37 x 10<sup>24</sup>, which greatly exceeds the population sized predicted by the logistic growth model of N = 5.979 x 10<sup>10</sup>). This difference arises because the logistic growth model accounts for resource limitations, causing the population to stabilize at its carrying capacity. In contrast, the exponential growth model assumes populations grow exponentially indefinitely. Comparing the two models highlights that the exponential model is not realistic in an environment with limited resources, making the logistic growth model more appropriate in this context.
+
 
 ## Question 3
 
@@ -191,14 +190,12 @@ population_growth_plot <- ggplot(data = combined_data, aes(x = Time, y = Populat
   theme(legend.position = "bottom")
 ```
 
+*The graph illustrates both unrestricted growth (exponential) and limited growth that stabilizes at a sustainable level (logistic)*
+
 ![My Image Description](population_growth_comparison_with_legend.png)
 
 ### Interpretations
-The orange line represents exponential growth. The straight line shows continuous and unbounded increase, suggesting no constraints on resources or space.
-
-The blue line represents logistic growth. The levelling off at a particular value as population reaches carrying capacity, suggests a maximum population size due to environmental constraints.
-
-My graph shows unrestricted growth (exponential) and limited growth stabilising at a sustainable level (logistic).
+The orange line represents exponential growth. This straight line shows a continuous and unbounded increase, indicating no constraints on resources or space. The blue line represents logistic growth. The leveling off at a specific value, as the population reaches its carrying capacity, suggests a maximum population size imposed by environmental constraints. 
 
 
 
