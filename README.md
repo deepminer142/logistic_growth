@@ -128,15 +128,40 @@ $$
 - Comapring the two models highlights that an exponential model is not realistic to an enviorment with limited resources, therefore logistic growth is more appropriate in this setting.
 
 ## Question 3
-- Code can be found in Question 3.R in repository 
+
+*Code to create the graph comparing the exponential and logistic growth curves*
+```{r}
+N0 <- 986.51                
+r <- 0.0100086              
+K <- 5.979e+10              
+
+time_values <- seq(0, 5000, by = 60)
+exp_growth <- N0 * exp(r * time_values)
+logistic_growth <- (N0 * K * exp(r * time_values)) / (K + (N0 * (exp(r * time_values) - 1)))
+
+exp_data <- data.frame(Time = time_values, Population = exp_growth, Model = "Exponential Growth")
+logistic_data <- data.frame(Time = time_values, Population = logistic_growth, Model = "Logistic Growth")
+combined_data <- rbind(exp_data, logistic_data)
+
+population_growth_plot <- ggplot(data = combined_data, aes(x = Time, y = Population, color = Model)) +
+  geom_line() +
+  scale_y_log10() +  
+  labs(
+    title = "Comparison of Exponential and Logistic Growth Models",
+    x = "Time (minutes)",
+    y = "Population Size (log scale)",
+    color = "Model"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
 ![My Image Description](population_growth_comparison_with_legend.png)
 
 ### Interpretations
-Orange represent exponential growth - As on a log scale it is a straight line
-- This shows continuous and unbounded increase, suggesting no constraints on resources or space.
+The orange line represents exponential growth. The straight line shows continuous and unbounded increase, suggesting no constraints on resources or space.
 
-Blue line represents logistic growth - as levels off at a particular value as population reaches carrying capacity.
-- This suggests a maximum population size due to environmental constraints.
+The blue line represents logistic growth. The levelling off at a particular value as population reaches carrying capacity, suggests a maximum population size due to environmental constraints.
 
 My graph shows unrestricted growth (exponential) and limited growth stabilising at a sustainable level (logistic).
 
