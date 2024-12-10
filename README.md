@@ -1,9 +1,40 @@
 # Logistic Growth
 ## Question 1
 ### Introduction 
-Logistic growth models are used to describe population growth in environments with limited resources. This report examines bacterial growth in an experimetnally controlled enviroment. 900 μl of growth medi and 100 μl were suspended bacterium Escherichia coli in the same media. It is hypothesized that under the logistic growth model, the bacteria will start multiplying at a fast rate as there is lots of resources available. This will continue until resources start to become limited and growth rate will start to decrease. The population size will reach its carrying capacity (K) which is the maximum population size an environment can sustain.To test this hypothesis, a linear model was used. 
+Logistic growth models are used to describe population growth in environments with limited resources. This report examines bacterial growth in an experimetnally controlled enviroment. 900 μl of growth medi and 100 μl of bacterium Escherichia coli were suspended in the same media. It is hypothesized that under the logistic growth model, the bacteria will start multiplying at a fast rate as there is lots of resources available. This will continue until resources start to become limited and growth rate will start to decrease. The population size will reach its carrying capacity (K) which is the maximum population size an environment can sustain. The results were used to estimate three paramters, initial population size, time and carrying capacity.  
 
 ### Graphical representation of data
+*Detailed analysis using a logistic growth model observed in `Experiment.csv`*
+
+```{r}
+growth_data <- read.csv("Experiment.csv")
+
+N0 <- 986.51 
+r <- 0.0100086   
+K <- 5.979e+10    
+
+logistic_fun <- function(t) {
+  N <- (N0 * K * exp(r * t)) / (K - N0 + N0 * exp(r * t))
+  return(N)
+}
+
+ggplot(data = growth_data, aes(x = t, y = N)) +
+  geom_point(color = "blue") +                 
+  geom_function(fun = logistic_fun, colour = "red") +
+  xlab("Time (t)") +
+  ylab("Population Size (N)") +
+  ggtitle("Observed Data and Logistic Growth Model") +
+  theme_bw()
+
+population_growth_plot <- ggplot(data = growth_data, aes(x = t, y = N)) +
+geom_point(color = "blue") +             
+  geom_function(fun = logistic_fun, colour = "red") +
+  scale_y_log10() +                           
+  xlab("Time (t)") +
+  ylab("Population Size (N) (log scale)") +
+  ggtitle("Log-Scaled Population Growth with Logistic Model") +
+  theme_bw()
+```
 
 ![Logistic Growth](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_plot.png)
 
