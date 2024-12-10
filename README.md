@@ -1,13 +1,10 @@
 # Logistic Growth
 ## Question 1
-- Logistic growth models are used to describe population growth in environments with limited resources.
-- Experimental set up: 900 μl of growth medi and 100 μl suspended bacterium Escherichia coli in the same media.
-- Under the logistic growth model, the bacteria will start multiplying at a fast rate as there is lots of resources available.
-- This will continue until resources start to become limited. 
-- Therefore, growth rate will start to decrease.
-- The population size will reach its carrying capacity (K) (the maximum population size an environment can sustain).
+### Introduction 
+Logistic growth models are used to describe population growth in environments with limited resources. This report examines bacterial growth in an experimetnally controlled enviroment. 900 μl of growth medi and 100 μl were suspended bacterium Escherichia coli in the same media. It is hypothesized that under the logistic growth model, the bacteria will start multiplying at a fast rate as there is lots of resources available. This will continue until resources start to become limited and growth rate will start to decrease. The population size will reach its carrying capacity (K) which is the maximum population size an environment can sustain.To test this hypothesis, a linear model was used. 
 
-### Graphical representation of Data
+### Graphical representation of data
+
 ![Logistic Growth](https://github.com/deepminer142/logistic_growth/blob/main/raw_data_plot.png)
 
 - Plot of the raw data with time (mins) on the x axis and population size (N) on the y axis.
